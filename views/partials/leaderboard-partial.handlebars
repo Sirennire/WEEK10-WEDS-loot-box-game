@@ -1,0 +1,37 @@
+<style>
+.leaderboard {
+  color: #eafc40;
+  background-color:transparent;
+}
+#slide-out, .hey{
+  background-color: #eafc40;
+  padding: 20px;
+}
+</style>
+
+<div id="slide" style="font-size: 25px">
+  <ul id="slide-out" class="hey side-nav full striped">
+    <div><ul id="images3">
+
+    </ul>
+    </div>
+    <br>
+  </ul>
+</div>
+
+<div class="container point" style="width:100%">
+  <a href="#" data-activates="slide-out" class="button-collapse point">
+    <i id="leaderboard" class="large mdi-navigation-menu point"><h5 class="leaderboard point">Leaderboard</h5></i>
+  </a>
+</div>
+
+<script>
+  $(document ).ready(function(){
+    $('.button-collapse').sideNav({
+        menuWidth: 300,
+        closeOnClick: true,
+        edge: 'right', // <--- CHECK THIS OUT
+    });
+    $('.collapsible').collapsible();
+  });
+</script>

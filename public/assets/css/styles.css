@@ -1,0 +1,31 @@
+#coinCountFill{
+    margin-top: -1em !important;
+}
+
+#userNameDisplay{
+    margin-top: -5px !important;
+}
+
+/* This doesn't work */
+.images {
+  animation: 250ms ease-in-out 1
+
+}
+
+#txtUserName, #txtPassword {
+    padding-left: 0px !important;
+    background: aliceblue;
+}
+
+#admin {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
+    margin: 5px 12px 15px 5px !important;
+    color: #2b2b3a !important;
+}
+
+#logbox {
+    background: #f5f5dc;
+    border: 2px solid #eed5b7;
+}

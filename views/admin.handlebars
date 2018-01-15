@@ -1,0 +1,137 @@
+<style>
+  body {
+    background-image: url("assets/img/bg/circles-light.png")
+  }
+</style>
+<body>
+
+<!--This is the admin page to add an item to our cats/item table. Currently it is set to cats from game of thrones but we can adjust when we decide what our item table should contain. The create/post request is working for this page. Because it doesn't seem like we will be using delete/put requests anywhere else in our app, (unless we have time to code the user trade in idea) we might need to add an update/delete option on this page in order to make our ap "restful".-->
+{{>nav-partial}}
+
+<div id="bg" class="container">
+
+  <!-- <div class="row">
+    <div class="col s12 center-align">
+      <h4 class="teal-text">Here Kitty Kitty!</h4>
+    </div><!--col-->
+  <!-- </div><!--row-->
+<!--
+  <div class="row">
+    <div class="col s12 center-align">
+      <img src="assets/img/other/chest.png" alt="Treasure Chest" height="150px">
+      <br>
+    </div><!--col-->
+  <!-- </div><!--row-->
+  <br><br>
+
+  <div class="row">
+    <div class="col s12 amber-text center-align">
+      <h5>Add an item to the Database</h5>
+    </div><!--col-->
+  </div><!--row-->
+
+
+  <div class="row">
+
+    <form id="createitem2" class="col s12">
+      <div class="input-field col s3">
+        <input placeholder="Character Name" name="name" type="text" class="validate">
+          <label for="name">Name</label>
+      </div><!--col-->
+
+      <div class="input-field col s2">
+        <select name="house">
+          <option value="" disabled selected>House</option>
+          <option value="Stark">Stark</option>
+          <option value="Targaryen">Targaryen</option>
+          <option value="Lannister">Lannister</option>
+          <option value="Tyrell">Tyrell</option>
+          <option value="Tully">Tully</option>
+          <option value="Martell">Martel</option>
+          <option value="Greyjoy">Greyjoy</option>
+          <option value="Baratheon">Baratheon</option>
+          <option value="Bolton">Bolton</option>
+          <option value="Tarly">Tarly</option>
+          <option value="Clegane">Clegane</option>
+          <option value="Other">Other</option>
+        </select>
+      </div><!--col-->
+
+      <div class="input-field col s2">
+        <select name="tier">
+          <option value="" disabled selected>Tier</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+      </div><!--col-->
+
+      <div class="input-field col s3">
+        <input placeholder="Image Link" name="image" type="text" class="validate">
+          <label for="name">Character Image</label>
+      </div><!--col-->
+
+      <div class="input-field col s2">
+        <input placeholder="House Image Link" name="houseImage" type="text" class="validate">
+          <label for="name">House Image</label>
+      </div><!--col-->
+
+  </div><!--row-->
+
+  <div class="row">
+    <div class="col s12 center-align">
+      <button class="center-align amber waves-effect waves-light btn" type="submit">Submit</button>
+    </div><!--col-->
+  </div><!--row-->
+  <br><br>
+    </form>
+
+ </div><!--container-->
+
+<div class="wrapper" style="width:95%; padding-left: 40px;">
+  <div class="row">
+    <div class="col s12">
+      <table class="striped" style="table-layout: fixed">
+        <thead class="" style="font-size: 10pt">
+          <tr style="font-size: 10pt">
+            <th><a class="btn-flat disabled"></a>NAME</th>
+            <th><a class="btn-flat disabled"></a>HOUSE</th>
+            <th><a class="btn-flat disabled"></a>TIER</th>
+            <th><a class="btn-flat disabled"></a>IMAGE LNK</th>
+            <th><a class="btn-flat disabled"></a>HOUSE LINK</th>
+            <th><a class="btn-flat disabled update-item">Update</a></th>
+            <th><a class="btn-flat disabled delete-item">Delete</a></th>
+          </tr>
+        </thead>
+
+        {{#each character}}
+        <tbody>
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.house}}</td>
+            <td>{{this.tier}}</td>
+            <!--<td>{{this.image}}</td>
+            <td>{{this.houseImage}}</td>-->
+            <td><img width="25px" src="{{this.image}}"></td>
+            <td><img width="25px" src="{{this.houseImage}}"></td>
+            <td><a class="btn-flat update-item" data-id="{{this.id}}">Update</a></td>
+            <td><a class="btn-flat delete-item" data-id="{{this.id}}">Delete</a></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+
+    </div><!--col-->
+</div><!--wrapper-->
+
+
+  </div><!--row-->
+</div>
+</div>
+</body>
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+</script>
